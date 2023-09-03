@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_24">24dp</dimen>
+    <dimen name="padding_60">60dp</dimen>
+
+    <dimen name="loading_conditions">40sp</dimen>
+    <dimen name="title_text_size">18sp</dimen>
+    <dimen name="history_amount_text_size">18sp</dimen>
+
+    <dimen name="card_radius">12dp</dimen>
+    <dimen name="small_card_radius">5dp</dimen>
+
+    <dimen name="rating_text_size">16sp</dimen>
+    <dimen name="hotel_name_text_size">22sp</dimen>
+    <dimen name="hotel_address_text_size">14sp</dimen>
+    <dimen name="hotel_price_text_size">30sp</dimen>
+    <dimen name="hotel_price_sum_text_size">16sp</dimen>
+    <dimen name="peculiarity_text_size">19sp</dimen>
+    <dimen name="hotel_about_content_text_size">16sp</dimen>
+
+    <dimen name="button_text_size">16sp</dimen>
+</resources>

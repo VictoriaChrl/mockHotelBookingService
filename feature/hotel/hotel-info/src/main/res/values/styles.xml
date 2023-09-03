@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Toolbar">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+    </style>
+
+    <style name="Rating">
+        <item name="android:textColor">@color/rating_text</item>
+        <item name="android:textSize">@dimen/rating_text_size</item>
+    </style>
+
+    <style name="HotelName">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/hotel_name_text_size</item>
+    </style>
+
+    <style name="HotelAddress">
+        <item name="android:textColor">@color/hotel_address_text</item>
+        <item name="android:textSize">@dimen/hotel_address_text_size</item>
+    </style>
+
+    <style name="HotelPrice">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/hotel_price_text_size</item>
+    </style>
+
+    <style name="HotelPriceSum">
+        <item name="android:textColor">@color/grey_color_text</item>
+        <item name="android:textSize">@dimen/hotel_price_sum_text_size</item>
+    </style>
+
+    <style name="Peculiarity">
+        <item name="android:textColor">@color/grey_color_text</item>
+        <item name="android:textSize">@dimen/peculiarity_text_size</item>
+    </style>
+
+    <style name="AboutHotelContent">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/hotel_about_content_text_size</item>
+    </style>
+
+    <style name="PickRoomButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:backgroundTint">@color/button_color</item>
+    </style>
+
+</resources>

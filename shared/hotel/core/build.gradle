@@ -1,16 +1,14 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
-
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.mockhotelbookingservice"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -29,23 +27,24 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildFeatures {
-        viewBinding true
-    }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
 dependencies {
 
-    implementation(project(":shared:hotel:core"))
-    implementation(project(":feature:hotel:hotel-info"))
-    implementation(project(":feature:hotel:room-list"))
-    implementation(project(":feature:hotel:room-booking"))
-
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.activity:activity-ktx:1.7.2'
+    implementation 'androidx.fragment:fragment-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+
     def daggerVersion = "2.42"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
@@ -60,4 +59,10 @@ dependencies {
     def navigationVersion = '2.5.3'
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    def coroutinesVersion = '1.7.1'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
 }

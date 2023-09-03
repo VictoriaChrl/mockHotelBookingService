@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="price_from">от</string>
+    <string name="price_rub">₽</string>
+    <string name="about_hotel_text">Об отеле</string>
+</resources>
