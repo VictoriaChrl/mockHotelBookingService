@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hotel_price_sum_text">за тур с перелётом</string>
+    <string name="what_not_in_text">Самое необходимое</string>
+    <string name="not_in_text">Что не включено</string>
+    <string name="what_in_text">Самое необходимое</string>
+    <string name="in_text">Что включено</string>
+    <string name="facilities_options_text">Самое необходимое</string>
+    <string name="facilities_text">Удобства</string>
+    <string name="hotel_title_toolbar">Отель</string>
+</resources>

@@ -15,6 +15,6 @@ dependencyResolutionManagement {
 rootProject.name = "mockHotelBookingService"
 include ':app'
 include ':shared:hotel:core'
-include ':feature:hotel:hotel-info'
-include ':feature:hotel:room-list'
-include ':feature:hotel:room-booking'
+include ':feature:hotel:hotel_info'
+include ':feature:hotel:room_list'
+include ':feature:hotel:room_booking'

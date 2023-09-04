@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hotelFragment">
+    <fragment
+        android:id="@+id/hotelFragment"
+        android:name="com.example.mockhotelbookingservice.feature.hotel.hotel_info.ui.HotelFragment"
+        android:label="HotelFragment" />
+</navigation>

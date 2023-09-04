@@ -14,9 +14,9 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/hotel" />
-            <option value="$PROJECT_DIR$/feature/hotel/hotel-info" />
-            <option value="$PROJECT_DIR$/feature/hotel/room-booking" />
-            <option value="$PROJECT_DIR$/feature/hotel/room-list" />
+            <option value="$PROJECT_DIR$/feature/hotel/hotel_info" />
+            <option value="$PROJECT_DIR$/feature/hotel/room_booking" />
+            <option value="$PROJECT_DIR$/feature/hotel/room_list" />
             <option value="$PROJECT_DIR$/shared" />
             <option value="$PROJECT_DIR$/shared/hotel" />
             <option value="$PROJECT_DIR$/shared/hotel/core" />

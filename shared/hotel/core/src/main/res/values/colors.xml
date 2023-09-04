@@ -19,4 +19,5 @@
     <color name="hotel_address_text">#0D72FF</color>
     <color name="grey_color_text">#828796</color>
     <color name="button_color">#0D72FF</color>
+    <color name="option_color">#2C3035</color>
 </resources>
