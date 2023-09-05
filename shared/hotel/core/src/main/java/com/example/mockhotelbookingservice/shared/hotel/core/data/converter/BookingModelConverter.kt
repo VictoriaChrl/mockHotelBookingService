@@ -2,8 +2,10 @@ package com.example.mockhotelbookingservice.shared.hotel.core.data.converter
 
 import com.example.mockhotelbookingservice.shared.hotel.core.data.model.AboutTheHotelModel
 import com.example.mockhotelbookingservice.shared.hotel.core.data.model.HotelInfoModel
+import com.example.mockhotelbookingservice.shared.hotel.core.data.model.RoomModel
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.AboutTheHotel
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.HotelInfo
+import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.Room
 import javax.inject.Inject
 
 class BookingModelConverter @Inject constructor() {
@@ -27,4 +29,13 @@ class BookingModelConverter @Inject constructor() {
             peculiarities = from.peculiarities
         )
 
+    fun convertModelToRoom(from: RoomModel): Room =
+        Room(
+            id = from.id,
+            name = from.name,
+            price = from.price,
+            pricePer = from.pricePer,
+            peculiarities = from.peculiarities,
+            imageUrls = from.imageUrls
+        )
 }

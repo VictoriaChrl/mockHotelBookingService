@@ -7,8 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red_light">#FC001D</color>
-    <color name="red_dark">#9A0007</color>
+    <color name="light_blue">#0D72FF</color>
+    <color name="bar_color">#FFFFFFFF</color>
     <color name="grey">#8A8A8A</color>
 
     <color name="front_color">#FFFFFFFF</color>
@@ -19,5 +19,8 @@
     <color name="hotel_address_text">#0D72FF</color>
     <color name="grey_color_text">#828796</color>
     <color name="button_color">#0D72FF</color>
+    <color name="button_about_room_color">#0D72FF</color>
+    <color name="button_about_room_trans_color">#1A0D72FF</color>
+
     <color name="option_color">#2C3035</color>
 </resources>

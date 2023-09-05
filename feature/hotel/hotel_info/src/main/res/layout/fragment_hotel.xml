@@ -17,7 +17,8 @@
             style="@style/Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:title="@string/hotel_title_toolbar" />
+            app:title="@string/hotel_title_toolbar"
+            app:titleCentered="true" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/backCardView"
@@ -31,31 +32,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    app:cardCornerRadius="@dimen/card_radius"
-                    app:cardBackgroundColor="@color/front_color"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/background_tab"
+                    android:layout_width="60dp"
+                    android:layout_height="15dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="5dp"
                     app:layout_constraintBottom_toBottomOf="@+id/viewPager"
-                    app:layout_constraintEnd_toEndOf="@+id/viewPager"
-                    app:layout_constraintStart_toStartOf="@+id/viewPager">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0">
 
                     <com.google.android.material.tabs.TabLayout
                         android:id="@+id/tab_layout"
-                        android:layout_width="70dp"
-                        android:layout_height="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:background="@color/white"
-                        app:tabBackground="@drawable/tab_selector" />
-
-                </androidx.cardview.widget.CardView>
-
+                        app:tabGravity="center"
+                        app:tabMode="fixed"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_tab"
+                        app:layout_constraintEnd_toEndOf="@+id/background_tab"
+                        app:layout_constraintStart_toStartOf="@+id/background_tab"
+                        app:layout_constraintTop_toTopOf="@+id/background_tab"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabIndicatorHeight="0dp" />
+                </com.google.android.material.card.MaterialCardView>
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewPager"
                     android:layout_width="match_parent"
                     android:layout_height="270dp"
-                    android:layout_margin="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:gravity="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -236,8 +247,7 @@
                     style="@style/AboutHotelContent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:padding="15dp"
                     android:text="@string/about_hotel_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -247,14 +257,14 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/optionsHotelCardView"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="170dp"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginBottom="15dp"
                     app:cardBackgroundColor="@color/surface"
                     app:cardCornerRadius="@dimen/card_radius"
                     app:cardElevation="0dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/about_hotel_content_text" />
@@ -351,7 +361,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="15dp"
                     android:text="@string/facilities_text"
                     app:layout_constraintBottom_toTopOf="@+id/facilities_options_text"
                     app:layout_constraintStart_toEndOf="@+id/emoji_happy"
@@ -410,7 +420,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="15dp"
                     android:text="@string/what_not_in_text"
                     app:layout_constraintBottom_toBottomOf="@+id/optionsHotelCardView"
                     app:layout_constraintStart_toEndOf="@+id/close_square"

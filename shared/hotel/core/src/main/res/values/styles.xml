@@ -3,9 +3,10 @@
 
     <style name="Toolbar">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:background">@color/white</item>
     </style>
+
 
     <style name="Rating">
         <item name="android:textColor">@color/rating_text</item>
@@ -60,4 +61,8 @@
         <item name="android:textSize">@dimen/option_text_size</item>
     </style>
 
+    <style name="AboutRoomButton">
+        <item name="android:textColor">@color/button_about_room_color</item>
+        <item name="android:textSize">@dimen/about_room_size</item>
+    </style>
 </resources>

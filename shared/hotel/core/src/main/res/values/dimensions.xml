@@ -17,7 +17,7 @@
     <dimen name="hotel_address_text_size">14sp</dimen>
     <dimen name="hotel_price_text_size">30sp</dimen>
     <dimen name="hotel_price_sum_text_size">16sp</dimen>
-    <dimen name="peculiarity_text_size">19sp</dimen>
+    <dimen name="peculiarity_text_size">16sp</dimen>
     <dimen name="hotel_about_content_text_size">16sp</dimen>
 
     <dimen name="button_text_size">16sp</dimen>
@@ -25,4 +25,6 @@
 
     <dimen name="option_title_size">16sp</dimen>
     <dimen name="option_text_size">14sp</dimen>
+
+    <dimen name="about_room_size">16sp</dimen>
 </resources>
