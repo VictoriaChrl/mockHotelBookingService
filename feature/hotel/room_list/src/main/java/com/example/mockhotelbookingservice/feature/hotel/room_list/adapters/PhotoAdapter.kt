@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.mockhotelbookingservice.shared.hotel.core.R
 import com.example.mockhotelbookingservice.feature.hotel.room_list.databinding.RoomPhotoItemBinding
 
 class PhotoAdapter(private val imageUrls: List<String>,
@@ -22,7 +23,10 @@ class PhotoAdapter(private val imageUrls: List<String>,
         val image = imageUrls[position]
         Glide.with(context)
             .load(image)
+            .error(R.drawable.ic_error_photo)
             .into(holder.binding.photoSlide)
+
+
     }
 
     override fun getItemCount(): Int = imageUrls.size

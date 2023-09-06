@@ -27,4 +27,7 @@
     <dimen name="option_text_size">14sp</dimen>
 
     <dimen name="about_room_size">16sp</dimen>
+    <dimen name="info_room_booking_text_size">16sp</dimen>
+    <dimen name="info_customer_title_text_size">22sp</dimen>
+    <dimen name="text_for_customer_text_size">14sp</dimen>
 </resources>

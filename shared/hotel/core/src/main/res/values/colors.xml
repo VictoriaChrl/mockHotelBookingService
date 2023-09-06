@@ -23,4 +23,6 @@
     <color name="button_about_room_trans_color">#1A0D72FF</color>
 
     <color name="option_color">#2C3035</color>
+    <color name="info_room_booking_color">#828796</color>
+    <color name="text_for_customer_color">#828796</color>
 </resources>

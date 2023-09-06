@@ -65,4 +65,25 @@
         <item name="android:textColor">@color/button_about_room_color</item>
         <item name="android:textSize">@dimen/about_room_size</item>
     </style>
+
+    <style name="InfoRoomBookingText">
+        <item name="android:textColor">@color/info_room_booking_color</item>
+        <item name="android:textSize">@dimen/info_room_booking_text_size</item>
+    </style>
+
+    <style name="FinalInfoRoomBookingText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/info_room_booking_text_size</item>
+    </style>
+
+    <style name="InfoCustomerTitle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/info_customer_title_text_size</item>
+    </style>
+
+    <style name="TextForCustomer">
+        <item name="android:textColor">@color/text_for_customer_color</item>
+        <item name="android:textSize">@dimen/info_customer_title_text_size</item>
+    </style>
 </resources>

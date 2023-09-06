@@ -6,5 +6,20 @@
     <fragment
         android:id="@+id/hotelFragment"
         android:name="com.example.mockhotelbookingservice.feature.hotel.hotel_info.ui.HotelFragment"
-        android:label="HotelFragment" />
+        android:label="HotelFragment">
+
+
+        <action
+            android:id="@+id/action_hotelFragment_to_roomListFragment2"
+            app:destination="@id/roomListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/roomListFragment"
+        android:name="com.example.mockhotelbookingservice.feature.hotel.room_list.ui.RoomListFragment"
+        android:label="RoomListFragment">
+        <argument
+            android:name="navigation_data"
+            app:argType="string" />
+    </fragment>
 </navigation>

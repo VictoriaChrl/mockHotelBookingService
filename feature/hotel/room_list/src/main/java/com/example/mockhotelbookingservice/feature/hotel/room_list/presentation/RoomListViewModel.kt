@@ -1,5 +1,6 @@
 package com.example.mockhotelbookingservice.feature.hotel.room_list.presentation
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.usecase.GetRoomListUseCase
 import kotlinx.coroutines.Dispatchers
@@ -24,6 +25,7 @@ class RoomListViewModel @Inject constructor(
             try{
                 _state.postValue(RoomUiState.Complete(getRoomListUseCase()))
             }catch (exception: Exception){
+                Log.v("VM Room", exception.message.toString())
                 handleException(exception)
             }
         }

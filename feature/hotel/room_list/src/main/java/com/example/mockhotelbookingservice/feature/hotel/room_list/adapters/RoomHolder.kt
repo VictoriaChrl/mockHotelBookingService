@@ -16,7 +16,6 @@ class RoomHolder (
 ) : RecyclerView.ViewHolder(binding.root) {
 
     private val peculiarities = PeculiarityAdapter()
-    private val viewPool = RecyclerView.RecycledViewPool()
 
     fun bind(room: Room) {
 
@@ -33,7 +32,6 @@ class RoomHolder (
             peculiarityList.apply{
                 adapter = peculiarities
                 layoutManager = flexLayoutManager
-                setRecycledViewPool(viewPool)
             }
             peculiarities.submitList(room.peculiarities)
             viewPager.adapter = PhotoAdapter(room.imageUrls,itemView.context)

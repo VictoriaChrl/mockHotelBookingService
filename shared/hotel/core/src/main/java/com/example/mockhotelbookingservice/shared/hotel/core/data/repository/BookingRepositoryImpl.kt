@@ -18,7 +18,7 @@ class BookingRepositoryImpl @Inject constructor(
 
 
     override suspend fun getRoomList(): List<Room> {
-        return bookingApi.getRoomList().map{
+        return bookingApi.getRoomList().rooms.map{
             rooms -> converter.convertModelToRoom(rooms)
         }
     }

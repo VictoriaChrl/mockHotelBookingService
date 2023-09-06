@@ -80,7 +80,6 @@
                     app:cardBackgroundColor="@color/rating_card"
                     app:cardCornerRadius="@dimen/small_card_radius"
                     app:cardElevation="0dp"
-
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/viewPager">
 
@@ -442,7 +441,7 @@
                 android:id="@+id/pickRoomButton"
                 style="@style/PickRoomButton"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:text="@string/pick_room_button_text" />
 

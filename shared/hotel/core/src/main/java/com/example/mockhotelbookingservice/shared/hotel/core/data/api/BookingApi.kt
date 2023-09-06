@@ -10,5 +10,7 @@ interface BookingApi {
     suspend fun getHotelInfo(): HotelInfoModel
 
     @GET("f9a38183-6f95-43aa-853a-9c83cbb05ecd")
-    suspend fun getRoomList(): List<RoomModel>
+    suspend fun getRoomList(): Rooms
 }
+
+data class Rooms(val rooms: List<RoomModel>)

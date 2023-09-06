@@ -21,6 +21,7 @@ class RoomAdapter:
     }
 
     override fun onBindViewHolder(holder: RoomHolder, position: Int) {
+
         holder.bind(getItem(position))
     }
 

@@ -9,11 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.mockhotelbookingservice.feature.hotel.hotel_info.R
 import com.example.mockhotelbookingservice.feature.hotel.hotel_info.adapters.PeculiarityAdapter
 import com.example.mockhotelbookingservice.feature.hotel.hotel_info.adapters.PhotoAdapter
 import com.example.mockhotelbookingservice.feature.hotel.hotel_info.databinding.FragmentHotelBinding
 import com.example.mockhotelbookingservice.feature.hotel.hotel_info.presentation.HotelInfoViewModel
 import com.example.mockhotelbookingservice.feature.hotel.hotel_info.presentation.HotelUiState
+import com.example.mockhotelbookingservice.shared.hotel.core.navigate
 import com.google.android.flexbox.AlignItems
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
@@ -52,6 +54,10 @@ class HotelFragment : Fragment() {
 
         viewModel = ViewModelProvider(this, viewModelFactory)[HotelInfoViewModel::class.java]
         viewModel.getHotelInfo()
+
+        binding.pickRoomButton.setOnClickListener {
+            navigate(R.id.action_hotelFragment_to_roomListFragment2, data = binding.hotelName.text.toString())
+        }
 
         viewModel.state.observe(viewLifecycleOwner, ::processState)
 

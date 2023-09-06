@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mockhotelbookingservice.feature.hotel.hotel_info.databinding.HotelPhotoItemBinding
+import com.example.mockhotelbookingservice.shared.hotel.core.R
 
 class PhotoAdapter(private val imageUrls: List<String>,
                    private val context: Context
@@ -22,6 +23,7 @@ class PhotoAdapter(private val imageUrls: List<String>,
         val image = imageUrls[position]
         Glide.with(context)
             .load(image)
+            .error(R.drawable.ic_error_photo)
             .into(holder.binding.photoSlide)
     }
 
