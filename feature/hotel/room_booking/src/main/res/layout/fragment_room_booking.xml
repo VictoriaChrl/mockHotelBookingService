@@ -17,13 +17,14 @@
             style="@style/Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="<Бронирование>"
+            app:title="Бронирование"
             app:titleCentered="true" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/hotelCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             app:cardBackgroundColor="@color/front_color"
             app:cardCornerRadius="@dimen/card_radius"
             app:cardElevation="0dp">
@@ -120,7 +121,7 @@
             android:id="@+id/infoCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             app:cardBackgroundColor="@color/front_color"
             app:cardCornerRadius="@dimen/card_radius"
             app:cardElevation="0dp">
@@ -290,7 +291,7 @@
             android:id="@+id/infoCustomerCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             app:cardBackgroundColor="@color/front_color"
             app:cardCornerRadius="@dimen/card_radius"
             app:cardElevation="0dp">
@@ -311,7 +312,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_begin="378dp" />
+                    app:layout_constraintGuide_end="15dp" />
 
                 <TextView
                     android:id="@+id/infoCustomerTitle"
@@ -329,16 +330,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:hint="Номер телефона"
                     app:layout_constraintTop_toBottomOf="@+id/infoCustomerTitle"
-                    app:layout_constraintStart_toStartOf="@+id/guideline3"
-                    app:layout_constraintEnd_toEndOf="@+id/guideline4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editPhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:maxLength="17"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -347,6 +352,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:hint="Почта"
                     app:layout_constraintTop_toBottomOf="@+id/inputPhone"
                     app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -367,16 +374,191 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
                     android:text="Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту"
-                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inputMail"
-                    app:layout_constraintEnd_toEndOf="@+id/guideline4"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/guestList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/infoCustomerCardView"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_guest" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/addGuestCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/front_color"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:cardElevation="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/addGuestTitle"
+                    style="@style/InfoCustomerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Добавить туриста" />
+
+                <ImageButton
+                    android:id="@+id/addGuestButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/front_color"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_add" />
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/totalInfoCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/front_color"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="15dp" />
+
+            <TextView
+                android:id="@+id/tourPrice"
+                style="@style/InfoRoomBookingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Тур"
+                app:layout_constraintStart_toStartOf="@+id/guideline5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fuelCharge"
+                    style="@style/InfoRoomBookingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Топливный сбор"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/tourPrice" />
+
+                <TextView
+                    android:id="@+id/serviceCharge"
+                    style="@style/InfoRoomBookingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Сервисный сбор"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/fuelCharge" />
+
+                <TextView
+                    android:id="@+id/totalPrice"
+                    style="@style/InfoRoomBookingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="К оплате"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/serviceCharge"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="15dp" />
+
+                <TextView
+                    android:id="@+id/tourPriceText"
+                    style="@style/FinalInfoRoomBookingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fuelChargeText"
+                    style="@style/FinalInfoRoomBookingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                    app:layout_constraintTop_toBottomOf="@+id/tourPriceText" />
+
+                <TextView
+                    android:id="@+id/serviceChargeText"
+                    style="@style/FinalInfoRoomBookingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                    app:layout_constraintTop_toBottomOf="@+id/fuelChargeText" />
+
+                <TextView
+                    android:id="@+id/totalPriceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    style="@style/TotalPriceText"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                    app:layout_constraintTop_toBottomOf="@+id/serviceChargeText"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/front_color"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="3dp">
+
+            <Button
+                android:id="@+id/payButton"
+                style="@style/Buttons"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                />
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -7,4 +7,8 @@
     <string name="hotel_name_text">Отель</string>
     <string name="room_text">Номер</string>
     <string name="nutrition_text">Питание</string>
+    <string name="dates_text_fragment">%1$s - %2$s</string>
+    <string name="number_of_nights_text_fragment">%1$s ночей</string>
+    <string name="price_text_fragment">%1$s ₽</string>
+    <string name="price_total_text_fragment">Оплатить %1$s ₽</string>
 </resources>

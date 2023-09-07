@@ -439,7 +439,7 @@
 
             <Button
                 android:id="@+id/pickRoomButton"
-                style="@style/PickRoomButton"
+                style="@style/Buttons"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="15dp"

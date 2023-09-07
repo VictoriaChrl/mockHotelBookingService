@@ -1,11 +1,9 @@
 package com.example.mockhotelbookingservice.shared.hotel.core
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import java.io.Serializable
 
 fun Fragment.navigate(actionId: Int, hostId: Int? = null, data: String? = null) {
 	val navController = if (hostId == null) {

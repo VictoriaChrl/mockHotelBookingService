@@ -1,6 +1,7 @@
 package com.example.mockhotelbookingservice.di
 
 import com.example.mockhotelbookingservice.feature.hotel.hotel_info.ui.HotelFragment
+import com.example.mockhotelbookingservice.feature.hotel.room_booking.ui.RoomBookingFragment
 import com.example.mockhotelbookingservice.feature.hotel.room_list.ui.RoomListFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -14,5 +15,6 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributeRoomListFragment(): RoomListFragment
-
+    @ContributesAndroidInjector
+    abstract fun contributeRoomBookingFragment(): RoomBookingFragment
 }

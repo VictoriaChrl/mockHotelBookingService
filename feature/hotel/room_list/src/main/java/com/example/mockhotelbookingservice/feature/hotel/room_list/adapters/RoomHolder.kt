@@ -1,6 +1,8 @@
 package com.example.mockhotelbookingservice.feature.hotel.room_list.adapters
 
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mockhotelbookingservice.feature.hotel.room_list.R
 import com.example.mockhotelbookingservice.feature.hotel.room_list.databinding.ItemRoomBinding
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.Room
 import com.google.android.flexbox.AlignItems
@@ -36,6 +38,10 @@ class RoomHolder (
             peculiarities.submitList(room.peculiarities)
             viewPager.adapter = PhotoAdapter(room.imageUrls,itemView.context)
             TabLayoutMediator(tabLayout,viewPager){_,_->}.attach()
+
+            pickRoomButton.setOnClickListener {
+                view -> view.findNavController().navigate(R.id.action_roomListFragment_to_roomBookingFragment)
+            }
         }
 
 

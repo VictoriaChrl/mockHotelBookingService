@@ -21,5 +21,12 @@
         <argument
             android:name="navigation_data"
             app:argType="string" />
+        <action
+            android:id="@+id/action_roomListFragment_to_roomBookingFragment"
+            app:destination="@id/roomBookingFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/roomBookingFragment"
+        android:name="com.example.mockhotelbookingservice.feature.hotel.room_booking.ui.RoomBookingFragment"
+        android:label="RoomBookingFragment" />
 </navigation>

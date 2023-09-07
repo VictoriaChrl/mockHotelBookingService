@@ -3,9 +3,11 @@ package com.example.mockhotelbookingservice.shared.hotel.core.data.converter
 import com.example.mockhotelbookingservice.shared.hotel.core.data.model.AboutTheHotelModel
 import com.example.mockhotelbookingservice.shared.hotel.core.data.model.HotelInfoModel
 import com.example.mockhotelbookingservice.shared.hotel.core.data.model.RoomModel
+import com.example.mockhotelbookingservice.shared.hotel.core.data.model.TourDetailsModel
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.AboutTheHotel
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.HotelInfo
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.Room
+import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.TourDetails
 import javax.inject.Inject
 
 class BookingModelConverter @Inject constructor() {
@@ -27,6 +29,25 @@ class BookingModelConverter @Inject constructor() {
         AboutTheHotel(
             description = from.description,
             peculiarities = from.peculiarities
+        )
+
+    fun convertModelToTourDetails(from: TourDetailsModel): TourDetails =
+        TourDetails(
+            id = from.id,
+            hotelName = from.hotelName,
+            hotelAddress = from.hotelAddress,
+            hotelRating = from.hotelRating,
+            ratingName = from.ratingName,
+            departure = from.departure,
+            arrivalCountry = from.arrivalCountry,
+            tourDateStart = from.tourDateStart,
+            tourDateStop = from.tourDateStop,
+            numberOfNights = from.numberOfNights,
+            room = from.room,
+            nutrition = from.nutrition,
+            tourPrice = from.tourPrice,
+            fuelCharge = from.fuelCharge,
+            serviceCharge =from.serviceCharge
         )
 
     fun convertModelToRoom(from: RoomModel): Room =
