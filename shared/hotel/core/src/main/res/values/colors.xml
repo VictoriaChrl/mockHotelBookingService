@@ -26,4 +26,8 @@
     <color name="info_room_booking_color">#828796</color>
     <color name="text_for_customer_color">#828796</color>
     <color name="total_price_text_color">#0D72FF</color>
+
+    <color name="edit_text_background_color">#F6F6F9</color>
+
+    <color name="edit_text_hint_color"> #A9ABB7</color>
 </resources>

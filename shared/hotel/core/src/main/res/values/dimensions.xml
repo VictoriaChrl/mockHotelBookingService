@@ -11,6 +11,7 @@
 
     <dimen name="card_radius">12dp</dimen>
     <dimen name="small_card_radius">5dp</dimen>
+    <dimen name="edit_text_radius">10dp</dimen>
 
     <dimen name="rating_text_size">16sp</dimen>
     <dimen name="hotel_name_text_size">22sp</dimen>
@@ -30,4 +31,6 @@
     <dimen name="info_room_booking_text_size">16sp</dimen>
     <dimen name="info_customer_title_text_size">22sp</dimen>
     <dimen name="text_for_customer_text_size">14sp</dimen>
+
+    <dimen name="success_payment_text_size">16sp</dimen>
 </resources>

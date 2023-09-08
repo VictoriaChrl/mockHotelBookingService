@@ -1,6 +1,9 @@
 package com.example.mockhotelbookingservice.feature.hotel.room_booking.presentation
 
+import android.util.Patterns
 import androidx.lifecycle.*
+import com.example.mockhotelbookingservice.shared.hotel.core.LiveEvent
+import com.example.mockhotelbookingservice.shared.hotel.core.MutableLiveEvent
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.usecase.GetTourDetailsUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,6 +21,47 @@ class RoomBookingViewModel @Inject constructor(
         MutableLiveData(RoomBookingUiState.Initial)
     val state: LiveData<RoomBookingUiState> = _state
 
+    private val _phoneNumberErrorEvent = MutableLiveEvent()
+    val phoneNumberErrorEvent: LiveEvent = _phoneNumberErrorEvent
+
+    private val _mailErrorEvent = MutableLiveEvent()
+    val mailErrorEvent: LiveEvent = _mailErrorEvent
+
+    private val _phoneNumberSuccessEvent = MutableLiveEvent()
+    val phoneNumberSuccessEvent: LiveEvent = _phoneNumberSuccessEvent
+
+    private val _mailSuccessEvent = MutableLiveEvent()
+    val mailSuccessEvent: LiveEvent = _mailSuccessEvent
+
+    fun checkPaymentInfoInput(phoneNumber: String, mail: String){
+        handlePaymentInfoInput(phoneNumber,mail)
+    }
+
+    private fun handlePaymentInfoInput(phoneNumber: String, mail: String) {
+        if (!isPhoneNumberValid(phoneNumber)) {
+            _phoneNumberErrorEvent()
+        } else if (!isMailValid(mail)) {
+            _mailErrorEvent()
+        } else {
+        }
+    }
+
+    private fun isMailValid(mail: String): Boolean {
+        return if (mail.isNotBlank() && mail.contains('@')) {
+            Patterns.EMAIL_ADDRESS.matcher(mail).matches()
+        } else {
+            false
+        }
+    }
+
+    private fun isPhoneNumberValid(phoneNumber: String): Boolean {
+        val regex = """^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$""".toRegex()
+        return if (phoneNumber.isNotBlank()) {
+            phoneNumber.matches(regex)
+        } else {
+            false
+        }
+    }
     fun getTourDetails() {
         _state.value = RoomBookingUiState.Loading
         viewModelScope.launch(Dispatchers.IO) {

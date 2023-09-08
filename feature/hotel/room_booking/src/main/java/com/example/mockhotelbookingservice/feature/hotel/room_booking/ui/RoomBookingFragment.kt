@@ -13,16 +13,18 @@ import com.example.mockhotelbookingservice.feature.hotel.room_booking.adapters.N
 import com.example.mockhotelbookingservice.feature.hotel.room_booking.databinding.FragmentRoomBookingBinding
 import com.example.mockhotelbookingservice.feature.hotel.room_booking.presentation.RoomBookingUiState
 import com.example.mockhotelbookingservice.feature.hotel.room_booking.presentation.RoomBookingViewModel
+import com.example.mockhotelbookingservice.feature.hotel.room_booking.util.OnEditTextChangedListener
 import com.example.mockhotelbookingservice.shared.hotel.core.R
 import com.example.mockhotelbookingservice.shared.hotel.core.data.formatWithSpaces
 import com.example.mockhotelbookingservice.shared.hotel.core.data.generateOrdinalNumberString
+import com.example.mockhotelbookingservice.shared.hotel.core.data.makeToast
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.Room
 import com.example.mockhotelbookingservice.shared.hotel.core.navigateBack
 import com.example.mockhotelbookingservice.shared.hotel.core.navigationData
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
-class RoomBookingFragment : Fragment() {
+class RoomBookingFragment : Fragment(), OnEditTextChangedListener {
 
     private var _binding: FragmentRoomBookingBinding? = null
     private val binding get() = _binding!!
@@ -55,11 +57,12 @@ class RoomBookingFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)[RoomBookingViewModel::class.java]
         viewModel.getTourDetails()
         viewModel.state.observe(viewLifecycleOwner, ::processState)
+//        viewModel.phoneNumberSuccessEvent.observe(viewLifecycleOwner, ::processState)
 
 
-        val guestAdapter = NewGuestAdapter()
+        val guestAdapter = NewGuestAdapter(guestMutableList, this)
         binding.guestList.adapter = guestAdapter
-        guestAdapter.submitList(guestMutableList)
+
 
         binding.apply {
             toolbar.apply {
@@ -67,7 +70,6 @@ class RoomBookingFragment : Fragment() {
                 setNavigationOnClickListener {
                     navigateBack()
                 }
-                title = navigationData
             }
 
             payButton.setOnClickListener {
@@ -75,12 +77,30 @@ class RoomBookingFragment : Fragment() {
             }
 
             addGuestButton.setOnClickListener {
-                guestMutableList.add(Guest(generateOrdinalNumberString(guestMutableList.size)))
-
-                guestAdapter.submitList(guestMutableList)
+                addGuest(guestAdapter)
             }
         }
 
+    }
+
+    private fun addGuest(adapter: NewGuestAdapter) {
+        val guestCount = generateOrdinalNumberString(guestMutableList.indices.last)
+        if (guestCount == null) {
+            makeToast(
+                binding.root.rootView,
+                com.example.mockhotelbookingservice.feature.hotel.room_booking.R.string.toast_limit_guests_fragment.toString()
+            )
+        } else {
+            guestMutableList.add(
+                Guest(
+                    getString(
+                        com.example.mockhotelbookingservice.feature.hotel.room_booking.R.string.new_guest_title_fragment,
+                        guestCount
+                    )
+                )
+            )
+            adapter.update(guestMutableList)
+        }
     }
 
     private fun processState(state: RoomBookingUiState) {
@@ -124,7 +144,11 @@ class RoomBookingFragment : Fragment() {
             state.details.apply {
 
                 val total = formatWithSpaces((tourPrice + fuelCharge + serviceCharge).toLong())
-                totalPriceText.text = total
+                totalPriceText.text = getString(
+                    com.example.mockhotelbookingservice.feature.hotel.room_booking.R.string.price_text_fragment,
+                    total
+                )
+
                 payButton.text = getString(
                     com.example.mockhotelbookingservice.feature.hotel.room_booking.R.string.price_total_text_fragment,
                     total
@@ -153,8 +177,17 @@ class RoomBookingFragment : Fragment() {
 
     }
 
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onTextChanged(position: Int, text: String) {
+        binding.payButton.setOnClickListener {
+            if(text==""){
+                makeToast(binding.root.rootView, "Заполните все данные")
+            }
+        }
     }
 }

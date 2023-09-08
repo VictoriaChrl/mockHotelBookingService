@@ -7,8 +7,6 @@
         android:id="@+id/hotelFragment"
         android:name="com.example.mockhotelbookingservice.feature.hotel.hotel_info.ui.HotelFragment"
         android:label="HotelFragment">
-
-
         <action
             android:id="@+id/action_hotelFragment_to_roomListFragment2"
             app:destination="@id/roomListFragment" />
@@ -28,5 +26,14 @@
     <fragment
         android:id="@+id/roomBookingFragment"
         android:name="com.example.mockhotelbookingservice.feature.hotel.room_booking.ui.RoomBookingFragment"
-        android:label="RoomBookingFragment" />
+        android:label="RoomBookingFragment" >
+        <action
+            android:id="@+id/action_roomBookingFragment_to_successPaymentFragment"
+            app:destination="@id/successPaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successPaymentFragment"
+        app:popUpTo="@+id/hotelFragment"
+        android:name="com.example.mockhotelbookingservice.feature.hotel.room_booking.ui.SuccessPaymentFragment"
+        android:label="SuccessPaymentFragment" />
 </navigation>

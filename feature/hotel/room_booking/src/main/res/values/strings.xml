@@ -11,4 +11,7 @@
     <string name="number_of_nights_text_fragment">%1$s ночей</string>
     <string name="price_text_fragment">%1$s ₽</string>
     <string name="price_total_text_fragment">Оплатить %1$s ₽</string>
+    <string name="new_guest_title_fragment">%1$s турист</string>
+    <string name="toast_limit_guests_fragment">Превышен лимит гостей</string>
+    <string name="success_payment_text_fragment">Подтверждение заказа №%1$s может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
 </resources>

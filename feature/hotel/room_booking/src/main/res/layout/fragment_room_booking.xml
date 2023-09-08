@@ -155,7 +155,7 @@
                     android:layout_marginTop="15dp"
                     android:text="@string/country_text"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/from" />
+                    app:layout_constraintTop_toBottomOf="@+id/fromText" />
 
                 <TextView
                     android:id="@+id/dates"
@@ -165,7 +165,7 @@
                     android:layout_marginTop="15dp"
                     android:text="@string/dates_text"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/country" />
+                    app:layout_constraintTop_toBottomOf="@+id/countryText" />
 
                 <TextView
                     android:id="@+id/numberOfNights"
@@ -175,7 +175,7 @@
                     android:layout_marginTop="15dp"
                     android:text="@string/number_of_nights_text"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/dates" />
+                    app:layout_constraintTop_toBottomOf="@+id/datesText" />
 
                 <TextView
                     android:id="@+id/hotelName"
@@ -185,7 +185,7 @@
                     android:layout_marginTop="15dp"
                     android:text="@string/hotel_name_text"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/numberOfNights" />
+                    app:layout_constraintTop_toBottomOf="@+id/numberOfNightsText" />
 
                 <TextView
                     android:id="@+id/room"
@@ -195,7 +195,7 @@
                     android:layout_marginTop="15dp"
                     android:text="@string/room_text"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/hotelName" />
+                    app:layout_constraintTop_toBottomOf="@+id/hotelNameText" />
 
                 <TextView
                     android:id="@+id/nutrition"
@@ -206,7 +206,7 @@
                     android:layout_marginBottom="15dp"
                     android:text="@string/nutrition_text"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/room"
+                    app:layout_constraintTop_toBottomOf="@+id/roomText"
                     app:layout_constraintBottom_toBottomOf="parent"
                     />
 
@@ -215,73 +215,86 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_begin="180dp" />
+                    app:layout_constraintGuide_begin="160dp" />
 
                 <TextView
                     android:id="@+id/fromText"
                     style="@style/FinalInfoRoomBookingText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:paddingEnd="15dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/from"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    tools:text="Some text" />
 
                 <TextView
                     android:id="@+id/countryText"
                     style="@style/FinalInfoRoomBookingText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/country"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/fromText" />
+                    tools:text="Some text" />
 
                 <TextView
                     android:id="@+id/datesText"
                     style="@style/FinalInfoRoomBookingText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/dates"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/countryText" />
+                    tools:text="Some text" />
 
                 <TextView
                     android:id="@+id/numberOfNightsText"
                     style="@style/FinalInfoRoomBookingText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/numberOfNights"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/datesText" />
+                    tools:text="Some text" />
 
                 <TextView
                     android:id="@+id/hotelNameText"
                     style="@style/FinalInfoRoomBookingText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:paddingEnd="15dp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/hotelName"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/numberOfNightsText" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Some text" />
 
                 <TextView
                     android:id="@+id/roomText"
                     style="@style/FinalInfoRoomBookingText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/room"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/hotelNameText" />
+                    tools:text="Some text" />
 
                 <TextView
                     android:id="@+id/nutritionText"
                     style="@style/FinalInfoRoomBookingText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/nutrition"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/roomText"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    />
+                    tools:text="Some text" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -316,7 +329,7 @@
 
                 <TextView
                     android:id="@+id/infoCustomerTitle"
-                    style="@style/InfoCustomerTitle"
+                    style="@style/BoldTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -332,6 +345,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
+                    style="@style/EditText"
                     android:hint="Номер телефона"
                     app:layout_constraintTop_toBottomOf="@+id/infoCustomerTitle"
                     app:layout_constraintStart_toStartOf="parent"
@@ -351,9 +365,10 @@
                     android:id="@+id/inputMail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
+                    style="@style/EditText"
                     android:hint="Почта"
                     app:layout_constraintTop_toBottomOf="@+id/inputPhone"
                     app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -372,7 +387,7 @@
                     style="@style/TextForCustomer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
@@ -412,7 +427,7 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/addGuestTitle"
-                    style="@style/InfoCustomerTitle"
+                    style="@style/BoldTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
