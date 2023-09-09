@@ -1,23 +1,25 @@
 package com.example.mockhotelbookingservice.shared.hotel.core.data
 
-import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import android.widget.EditText
 import com.google.android.material.snackbar.Snackbar
 import java.text.DecimalFormat
 
 fun generateOrdinalNumberString(n: Int): String? {
 
     val ordinal = when (n) {
-        1 -> "Первый"
-        2 -> "Второй"
-        3 -> "Третий"
-        4 -> "Четвертый"
-        5 -> "Пятый"
-        6 -> "Шестой"
-        7 -> "Седьмой"
-        8 -> "Восьмой"
-        9 -> "Девятый"
-        10 -> "Десятый"
+        0 -> "Первый"
+        1 -> "Второй"
+        2 -> "Третий"
+        3 -> "Четвертый"
+        4 -> "Пятый"
+        5 -> "Шестой"
+        6 -> "Седьмой"
+        7 -> "Восьмой"
+        8 -> "Девятый"
+        9 -> "Десятый"
         else -> null
     }
 
@@ -31,4 +33,16 @@ fun formatWithSpaces(number: Long): String {
 
 fun makeToast(view: View, text: String){
     Snackbar.make(view, text, Snackbar.LENGTH_SHORT).show()
+}
+
+fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+    this.addTextChangedListener(object : TextWatcher {
+        override fun afterTextChanged(editable: Editable?) {
+            afterTextChanged.invoke(editable.toString())
+        }
+
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+    })
 }

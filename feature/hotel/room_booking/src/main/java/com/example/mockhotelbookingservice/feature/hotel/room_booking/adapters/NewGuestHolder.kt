@@ -1,20 +1,18 @@
 package com.example.mockhotelbookingservice.feature.hotel.room_booking.adapters
 
-import android.os.Build
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.view.View
-import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mockhotelbookingservice.feature.hotel.room_booking.databinding.ItemGuestBinding
-import com.example.mockhotelbookingservice.feature.hotel.room_booking.util.OnEditTextChangedListener
+import com.example.mockhotelbookingservice.feature.hotel.room_booking.util.OnEditBackgroundChangedListener
+import com.example.mockhotelbookingservice.shared.hotel.core.R
 import com.example.mockhotelbookingservice.shared.hotel.core.R.drawable
-import com.google.android.material.textfield.TextInputEditText
+
 
 class NewGuestHolder(
-    private val binding: ItemGuestBinding,
-    private val editTextChangedListener: OnEditTextChangedListener
-) : RecyclerView.ViewHolder(binding.root) {
+    private val binding: ItemGuestBinding
+) : RecyclerView.ViewHolder(binding.root){
 
     fun bind(guest: Guest) {
         binding.apply {
@@ -30,25 +28,64 @@ class NewGuestHolder(
                     expandableIcon.setImageResource(drawable.ic_arrow_up)
                 }
             }
-            editName.addListeners()
-            editSurname.addListeners()
-            editBirthday.addListeners()
-            editCitizenship.addListeners()
-            editPassportLimit.addListeners()
-            editPassportNumber.addListeners()
-
-        }
-
-    }
-
-    private fun TextInputEditText.addListeners(){
-        this.addTextChangedListener {
-            val text = it?.toString() ?: ""
-            editTextChangedListener.onTextChanged(adapterPosition, text)
         }
     }
-}
+   fun onItemClick(): Boolean {
+        binding.apply {
+            val editTexts = arrayOf(editName, editSurname, editBirthday, editPassportLimit, editPassportNumber, editCitizenship)
+            val inputBoxes = arrayOf(inputName, inputSurname, inputBirthday, inputPassportLimit, inputPassportNumber, inputCitizenship)
+
+            for (i in editTexts.indices) {
+                if (editTexts[i].text.isNullOrEmpty()) {
+                    inputBoxes[i].setBoxBackgroundColorResource(R.color.edit_error_color)
+                } else {
+                    inputBoxes[i].setBoxBackgroundColorResource(R.color.edit_text_background_color)
+                }
+            }
+
+            val isNameValid = !editName.text.isNullOrEmpty()
+            val isSurnameValid = !editSurname.text.isNullOrEmpty()
+            val isBirthdayValid = !editBirthday.text.isNullOrEmpty()
+            val isPassportLimitValid = !editPassportLimit.text.isNullOrEmpty()
+            val isPassportNumberValid = !editPassportNumber.text.isNullOrEmpty()
+            val isCitizenshipValid = !editCitizenship.text.isNullOrEmpty()
+
+            return isNameValid && isSurnameValid && isBirthdayValid && isPassportLimitValid && isPassportNumberValid && isCitizenshipValid
+//            if (editName.text.isNullOrEmpty()) {
+//                inputName.setBoxBackgroundColorResource(R.color.edit_error_color)
+//            } else {
+//                inputName.setBoxBackgroundColorResource(R.color.edit_text_background_color)
+//            }
+//            if (editSurname.text.isNullOrEmpty()) {
+//                inputSurname.setBoxBackgroundColorResource(R.color.edit_error_color)
+//            } else {
+//                inputSurname.setBoxBackgroundColorResource(R.color.edit_text_background_color)
+//            }
+//            if (editBirthday.text.isNullOrEmpty()) {
+//                inputBirthday.setBoxBackgroundColorResource(R.color.edit_error_color)
+//            } else {
+//                inputBirthday.setBoxBackgroundColorResource(R.color.edit_text_background_color)
+//            }
+//            if (editPassportLimit.text.isNullOrEmpty()) {
+//                inputPassportLimit.setBoxBackgroundColorResource(R.color.edit_error_color)
+//            } else {
+//                inputPassportLimit.setBoxBackgroundColorResource(R.color.edit_text_background_color)
+//            }
+//            if (editPassportNumber.text.isNullOrEmpty()) {
+//                inputPassportNumber.setBoxBackgroundColorResource(R.color.edit_error_color)
+//            } else {
+//                inputPassportNumber.setBoxBackgroundColorResource(R.color.edit_text_background_color)
+//            }
+//            if (editCitizenship.text.isNullOrEmpty()) {
+//                inputCitizenship.setBoxBackgroundColorResource(R.color.edit_error_color)
+//            } else {
+//                inputCitizenship.setBoxBackgroundColorResource(R.color.edit_text_background_color)
+            }
+
+        }
+    }
+
 
 data class Guest(
-    val title: String
+    val id: Long, val title: String
 )

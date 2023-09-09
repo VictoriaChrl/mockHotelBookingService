@@ -3,23 +3,25 @@ package com.example.mockhotelbookingservice.feature.hotel.room_booking.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mockhotelbookingservice.feature.hotel.room_booking.databinding.ItemGuestBinding
-import com.example.mockhotelbookingservice.feature.hotel.room_booking.util.OnEditTextChangedListener
+
 
 class NewGuestAdapter(
-    initGuestList: List<Guest>,
-    private val editTextChangedListener: OnEditTextChangedListener
+    initGuestList: List<Guest>
 ) :
     RecyclerView.Adapter<NewGuestHolder>() {
 
     private val guestMutableList =
         mutableListOf<Guest>()
 
-
     init {
         guestMutableList.addAll(initGuestList)
+        setHasStableIds(true)
+    }
+
+    override fun getItemId(position: Int): Long {
+        return guestMutableList[position].id
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewGuestHolder {
@@ -28,12 +30,13 @@ class NewGuestAdapter(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            ), editTextChangedListener
+            )
         )
     }
 
     override fun onBindViewHolder(holder: NewGuestHolder, position: Int) {
         holder.bind(guestMutableList[position])
+
     }
 
     override fun getItemCount(): Int {
@@ -61,7 +64,7 @@ class GuestDiffCallback(
     override fun getNewListSize() = newList.size
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition].title == newList[newItemPosition].title
+        return oldList[oldItemPosition].id == newList[newItemPosition].id
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {

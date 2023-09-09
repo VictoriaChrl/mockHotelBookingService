@@ -30,4 +30,6 @@
     <color name="edit_text_background_color">#F6F6F9</color>
 
     <color name="edit_text_hint_color"> #A9ABB7</color>
+
+    <color name="edit_error_color">#26EB5757</color>
 </resources>
