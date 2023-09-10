@@ -71,7 +71,7 @@
             android:id="@+id/peculiarityList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="12dp"
             android:layout_marginRight="15dp"
             android:clipToPadding="false"
             app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +149,6 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
-
             android:text="@string/price_rub"
             app:layout_constraintBottom_toTopOf="@+id/pickRoomButton"
             app:layout_constraintStart_toEndOf="@+id/room_price"

@@ -5,7 +5,6 @@ import android.transition.TransitionManager
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mockhotelbookingservice.feature.hotel.room_booking.databinding.ItemGuestBinding
-import com.example.mockhotelbookingservice.feature.hotel.room_booking.util.OnEditBackgroundChangedListener
 import com.example.mockhotelbookingservice.shared.hotel.core.R
 import com.example.mockhotelbookingservice.shared.hotel.core.R.drawable
 
@@ -51,37 +50,7 @@ class NewGuestHolder(
             val isCitizenshipValid = !editCitizenship.text.isNullOrEmpty()
 
             return isNameValid && isSurnameValid && isBirthdayValid && isPassportLimitValid && isPassportNumberValid && isCitizenshipValid
-//            if (editName.text.isNullOrEmpty()) {
-//                inputName.setBoxBackgroundColorResource(R.color.edit_error_color)
-//            } else {
-//                inputName.setBoxBackgroundColorResource(R.color.edit_text_background_color)
-//            }
-//            if (editSurname.text.isNullOrEmpty()) {
-//                inputSurname.setBoxBackgroundColorResource(R.color.edit_error_color)
-//            } else {
-//                inputSurname.setBoxBackgroundColorResource(R.color.edit_text_background_color)
-//            }
-//            if (editBirthday.text.isNullOrEmpty()) {
-//                inputBirthday.setBoxBackgroundColorResource(R.color.edit_error_color)
-//            } else {
-//                inputBirthday.setBoxBackgroundColorResource(R.color.edit_text_background_color)
-//            }
-//            if (editPassportLimit.text.isNullOrEmpty()) {
-//                inputPassportLimit.setBoxBackgroundColorResource(R.color.edit_error_color)
-//            } else {
-//                inputPassportLimit.setBoxBackgroundColorResource(R.color.edit_text_background_color)
-//            }
-//            if (editPassportNumber.text.isNullOrEmpty()) {
-//                inputPassportNumber.setBoxBackgroundColorResource(R.color.edit_error_color)
-//            } else {
-//                inputPassportNumber.setBoxBackgroundColorResource(R.color.edit_text_background_color)
-//            }
-//            if (editCitizenship.text.isNullOrEmpty()) {
-//                inputCitizenship.setBoxBackgroundColorResource(R.color.edit_error_color)
-//            } else {
-//                inputCitizenship.setBoxBackgroundColorResource(R.color.edit_text_background_color)
             }
-
         }
     }
 

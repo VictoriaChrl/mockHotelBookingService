@@ -4,6 +4,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mockhotelbookingservice.feature.hotel.room_list.R
 import com.example.mockhotelbookingservice.feature.hotel.room_list.databinding.ItemRoomBinding
+import com.example.mockhotelbookingservice.shared.hotel.core.utils.formatWithSpaces
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.entity.Room
 import com.google.android.flexbox.AlignItems
 import com.google.android.flexbox.FlexDirection
@@ -29,8 +30,10 @@ class RoomHolder (
 
         binding.apply {
             roomName.text = room.name
-            roomPrice.text = room.price.toString()
+            roomPrice.text = formatWithSpaces(room.price.toLong())
+
             roomPriceSum.text = room.pricePer
+
             peculiarityList.apply{
                 adapter = peculiarities
                 layoutManager = flexLayoutManager

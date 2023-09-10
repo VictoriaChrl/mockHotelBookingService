@@ -1,4 +1,4 @@
-package com.example.mockhotelbookingservice.shared.hotel.core
+package com.example.mockhotelbookingservice.shared.hotel.core.utils
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner

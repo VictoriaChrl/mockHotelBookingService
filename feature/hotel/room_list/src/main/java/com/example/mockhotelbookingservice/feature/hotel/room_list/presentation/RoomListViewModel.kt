@@ -25,7 +25,6 @@ class RoomListViewModel @Inject constructor(
             try{
                 _state.postValue(RoomUiState.Complete(getRoomListUseCase()))
             }catch (exception: Exception){
-                Log.v("VM Room", exception.message.toString())
                 handleException(exception)
             }
         }

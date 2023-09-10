@@ -1,4 +1,4 @@
-package com.example.mockhotelbookingservice.shared.hotel.core
+package com.example.mockhotelbookingservice.shared.hotel.core.utils
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

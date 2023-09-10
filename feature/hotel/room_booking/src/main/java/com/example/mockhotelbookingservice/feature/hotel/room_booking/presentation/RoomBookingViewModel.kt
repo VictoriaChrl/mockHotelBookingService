@@ -2,8 +2,6 @@ package com.example.mockhotelbookingservice.feature.hotel.room_booking.presentat
 
 import android.util.Patterns
 import androidx.lifecycle.*
-import com.example.mockhotelbookingservice.shared.hotel.core.LiveEvent
-import com.example.mockhotelbookingservice.shared.hotel.core.MutableLiveEvent
 import com.example.mockhotelbookingservice.shared.hotel.core.domain.usecase.GetTourDetailsUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

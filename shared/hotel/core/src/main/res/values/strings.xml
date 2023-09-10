@@ -4,4 +4,7 @@
     <string name="price_rub">₽</string>
     <string name="about_hotel_text">Об отеле</string>
     <string name="pick_room_button_text">К выбору номера</string>
+    <string name="success_payment_button_text">Супер!</string>
+    <string name="error_internet_text">Проблемы с сетью, попробуйте в другой раз</string>
+    <string name="error_unknown_text">Что-то пошло не так, попробуйте в другой раз</string>
 </resources>

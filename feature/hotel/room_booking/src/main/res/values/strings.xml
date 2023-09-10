@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="title_text">Бронирование</string>
+    <string name="title_success_payment_text">Заказ оплачен</string>
     <string name="from_text">Вылет из</string>
     <string name="country_text">Страна, город</string>
     <string name="dates_text">Даты</string>
@@ -15,4 +17,15 @@
     <string name="toast_limit_guests_fragment">Превышен лимит гостей</string>
     <string name="toast_check_edit_fragment">Проверьте заполненные данные</string>
     <string name="success_payment_text_fragment">Подтверждение заказа №%1$s может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
+    <string name="info_customer_title_text">Информация о покупке</string>
+    <string name="input_phone_text">Номер телефона</string>
+    <string name="edit_phone_text">+7</string>
+    <string name="input_mail_text">Почта</string>
+    <string name="text_for_customer">Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту</string>
+    <string name="add_guest_title">Добавить туриста</string>
+    <string name="tour_price_text">Тур</string>
+    <string name="fuel_charge_text">Топливный сбор</string>
+    <string name="service_charge_text">Сервисный сбор</string>
+    <string name="total_price_text">К оплате</string>
+    <string name="success_payment_title_text">Ваш заказ принят в работу</string>
 </resources>

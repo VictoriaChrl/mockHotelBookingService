@@ -1,4 +1,4 @@
-package com.example.mockhotelbookingservice.shared.hotel.core.data
+package com.example.mockhotelbookingservice.shared.hotel.core.utils
 
 import android.text.Editable
 import android.text.TextWatcher

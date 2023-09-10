@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.example.mockhotelbookingservice.feature.hotel.room_booking.databinding.FragmentSuccessPaymentBinding
 import com.example.mockhotelbookingservice.shared.hotel.core.R
-import com.example.mockhotelbookingservice.shared.hotel.core.navigateBack
+import com.example.mockhotelbookingservice.shared.hotel.core.utils.navigate
+import com.example.mockhotelbookingservice.shared.hotel.core.utils.navigateBack
 import dagger.android.support.AndroidSupportInjection
 import kotlin.random.Random
 
@@ -49,10 +51,14 @@ class SuccessPaymentFragment : Fragment() {
             }
 
             successPaymentButton.setOnClickListener {
-                navigateBack()
+                navigateToHotelFragment()
             }
         }
 
+    }
+
+    private fun navigateToHotelFragment(){
+        navigate(com.example.mockhotelbookingservice.feature.hotel.room_booking.R.id.action_successPaymentFragment_to_hotelFragment)
     }
 
     override fun onDestroyView() {

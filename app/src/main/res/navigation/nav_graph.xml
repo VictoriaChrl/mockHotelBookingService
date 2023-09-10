@@ -6,7 +6,8 @@
     <fragment
         android:id="@+id/hotelFragment"
         android:name="com.example.mockhotelbookingservice.feature.hotel.hotel_info.ui.HotelFragment"
-        android:label="HotelFragment">
+        android:label="HotelFragment"
+        >
         <action
             android:id="@+id/action_hotelFragment_to_roomListFragment2"
             app:destination="@id/roomListFragment" />
@@ -33,7 +34,13 @@
     </fragment>
     <fragment
         android:id="@+id/successPaymentFragment"
-        app:popUpTo="@+id/hotelFragment"
         android:name="com.example.mockhotelbookingservice.feature.hotel.room_booking.ui.SuccessPaymentFragment"
-        android:label="SuccessPaymentFragment" />
+        android:label="SuccessPaymentFragment" >
+        <action
+            android:id="@+id/action_successPaymentFragment_to_hotelFragment"
+            app:destination="@id/hotelFragment"
+            app:popUpTo="@id/hotelFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
 </navigation>
