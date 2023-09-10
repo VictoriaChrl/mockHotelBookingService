@@ -8,4 +8,5 @@
     <string name="facilities_options_text">Самое необходимое</string>
     <string name="facilities_text">Удобства</string>
     <string name="hotel_title_toolbar">Отель</string>
+    <string name="about_hotel_text">Об отеле</string>
 </resources>
